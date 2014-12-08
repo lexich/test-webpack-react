@@ -1,0 +1,18 @@
+{
+  "name": "test-webpack",
+  "version": "0.0.0",
+  "authors": [
+    "Efremov Alexey <lexich121@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
