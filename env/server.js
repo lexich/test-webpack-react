@@ -27,7 +27,7 @@ var fork = function(opts, port, cb){
 
 process.on("message", function(opt){
   if(opt.msg === "runServer"){
-    var webpackConfig = require("./webpack.config.js");
+    var webpackConfig = require("./../webpack.config.js");
     var opts = opt.data.options || {};
     var port = opt.data.port || 8080;
     runServer(webpackConfig, opts, port, function(err){

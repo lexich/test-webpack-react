@@ -12,7 +12,7 @@ runWebpack = (config) ->
 
 gulp.task "server", ["clean"], (cb)->
   open = require "open"
-  server = require("./server.js")
+  server = require("./env/server.js")
   server.fork {}, 8080, (err, {host, port, path})->
     gutil.log("error", err) if err
     host ?= "localhost"
