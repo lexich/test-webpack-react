@@ -2,6 +2,7 @@ path = require("path")
 webpack = require("webpack")
 ExtractTextPlugin = require("extract-text-webpack-plugin")
 HtmlWebpackPlugin = require("html-webpack-plugin")
+WebpackErrorNotificationPlugin = require('webpack-error-notification')
 fs = require("fs")
 module.exports =
   entry: "./app/app"
@@ -39,6 +40,7 @@ module.exports =
 
   devtool: "source-map"
   plugins: [
+    new WebpackErrorNotificationPlugin(),
     new webpack.ResolverPlugin(
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
     ),

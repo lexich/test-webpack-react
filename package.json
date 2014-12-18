@@ -31,7 +31,8 @@
     "url-loader": "^0.5.5",
     "vinyl-paths": "^1.0.0",
     "webpack": "^1.4.13",
-    "webpack-dev-server": "^1.6.5"
+    "webpack-dev-server": "^1.6.5",
+    "webpack-error-notification": "^0.1.3"
   },
   "dependencies": {
     "react": "^0.12.1"
