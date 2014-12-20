@@ -30,29 +30,22 @@ var App = React.createClass({
 });
 
 var Index = React.createClass({
+  mixins: [Router.State],
   render: function () {
+    var params = this.getParams();
     return (
       <div>
-        <p>Sidebar features:</p>
-        <ul style={{maxWidth: '400px'}}>
-          <li>User can open/close categories</li>
-          <li>
-            Visiting an item on first page load will automatically open
-            the correct category. (Click an item, then reload the
-            browser.)
-          </li>
-          <li>
-            Navigating with forward/back buttons will open an active
-            category if it is not already open. (Navigate to several
-            items, close all the categories, then use back/forward
-            buttons.)
-          </li>
-          <li>
-            Only the user can close a category. (Navigating from an
-            active category will not close it.)
-          </li>
-        </ul>
+        "Hello react router"
+        { params.lexich }
       </div>
+    );
+  }
+});
+
+var NotFoundView = React.createClass({
+  render: function(){
+    return (
+      <p>Page not found 404</p>
     );
   }
 });
@@ -62,6 +55,7 @@ var routes = (
     <Router.DefaultRoute handler={Index}/>
     <Router.Route name="box" path="box" handler={SimpleBox} />
     <Router.Route name="kitty" path="kitty" handler={LittleKitty} />
+    <Router.NotFoundRoute handler={NotFoundView} />
   </Router.Route>
 );
 
