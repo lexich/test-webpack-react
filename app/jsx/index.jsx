@@ -16,10 +16,10 @@ var App = React.createClass({
               <a href="#/">Index</a>
             </li>
             <li>
-              <a href="#/kitty">kitty</a>
+              <a href="#/pages/kitty">kitty</a>
             </li>
             <li>
-              <a href="#/box">Box</a>
+              <a href="#/pages/box">Box</a>
             </li>
           </ul>
           <Router.RouteHandler/>
@@ -42,6 +42,17 @@ var Index = React.createClass({
   }
 });
 
+var Pages = React.createClass({
+  render: function(){
+    return (
+      <div className="Pages">
+        CustomPage
+        <Router.RouteHandler />
+      </div>
+    );
+  }
+})
+
 var NotFoundView = React.createClass({
   render: function(){
     return (
@@ -53,8 +64,11 @@ var NotFoundView = React.createClass({
 var routes = (
   <Router.Route handler={App}>
     <Router.DefaultRoute handler={Index}/>
-    <Router.Route name="box" path="box" handler={SimpleBox} />
-    <Router.Route name="kitty" path="kitty" handler={LittleKitty} />
+    <Router.Route name="pages" path="pages" handler={Pages}>
+      <Router.Route name="box" path="box" handler={SimpleBox} />
+      <Router.Route name="kitty" path="kitty" handler={LittleKitty} />
+      <Router.NotFoundRoute handler={NotFoundView} />
+    </Router.Route>
     <Router.NotFoundRoute handler={NotFoundView} />
   </Router.Route>
 );
