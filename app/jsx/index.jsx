@@ -1,32 +1,31 @@
 var SimpleBox = require("./SimpleBox/SimpleBox");
 var LittleKitty = require("./LittleKitty/LittleKitty");
 var React = require("react");
-var Router = require('react-router');
+var Router = require('react-router'),
+    Route = Router.Route,
+    DefaultRoute = Router.DefaultRoute,
+    RouteHandler = Router.RouteHandler,
+    Link = Router.Link;
 
-//var { Route, DefaultRoute, RouteHandler, Link } = Router;
+
+var ReactBootstrap = require('react-bootstrap')
+  , Nav = ReactBootstrap.Nav;
+
+var ReactRouterBootstrap = require('react-router-bootstrap')
+  , NavItemLink = ReactRouterBootstrap.NavItemLink
+  , ButtonLink = ReactRouterBootstrap.ButtonLink;
+
+require("jquery");
 
 var App = React.createClass({
-  mixins: [ Router.State ],
   render: function () {
     return (
-      <div>
-        <div className="App">
-          <ul>
-            <li>
-              <a href="#/">Index</a>
-            </li>
-            <li>
-              <p>Pages</p>
-              <ul>
-                <li> <a href="#/pages/cat">cat redirect kitten</a> </li>
-                <li> <a href="#/pages/kitty">kitty</a> </li>
-                <li> <a href="#/pages/box">Box</a> </li>
-              </ul>
-            </li>
-
-          </ul>
-          <Router.RouteHandler/>
-        </div>
+      <div className="App">
+        <Nav>
+          <NavItemLink to="box" someparam="1">Box</NavItemLink>
+          <NavItemLink to="kitty">Kitty</NavItemLink>
+        </Nav>
+        <Router.RouteHandler />
       </div>
     );
   }
