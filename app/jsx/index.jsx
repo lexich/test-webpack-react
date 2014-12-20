@@ -16,11 +16,14 @@ var App = React.createClass({
               <a href="#/">Index</a>
             </li>
             <li>
-              <a href="#/pages/kitty">kitty</a>
+              <p>Pages</p>
+              <ul>
+                <li> <a href="#/pages/cat">cat redirect kitten</a> </li>
+                <li> <a href="#/pages/kitty">kitty</a> </li>
+                <li> <a href="#/pages/box">Box</a> </li>
+              </ul>
             </li>
-            <li>
-              <a href="#/pages/box">Box</a>
-            </li>
+
           </ul>
           <Router.RouteHandler/>
         </div>
@@ -67,6 +70,7 @@ var routes = (
     <Router.Route name="pages" path="pages" handler={Pages}>
       <Router.Route name="box" path="box" handler={SimpleBox} />
       <Router.Route name="kitty" path="kitty" handler={LittleKitty} />
+      <Router.Redirect from="cat" to="kitty" />
       <Router.NotFoundRoute handler={NotFoundView} />
     </Router.Route>
     <Router.NotFoundRoute handler={NotFoundView} />
