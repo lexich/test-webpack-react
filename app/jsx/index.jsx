@@ -68,7 +68,7 @@ var routes = (
     <Router.DefaultRoute handler={Index}/>
     <Router.Route name="pages" path="pages" handler={Pages}>
       <Router.Route name="box" path="box" handler={SimpleBox} />
-      <Router.Route name="kitty" path="kitty" handler={LittleKitty} />
+      <Router.Route name="kitty" path="kitty" handler={LittleKitty}/>
       <Router.Redirect from="cat" to="kitty" />
       <Router.NotFoundRoute handler={NotFoundView} />
     </Router.Route>

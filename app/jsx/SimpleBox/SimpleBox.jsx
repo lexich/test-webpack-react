@@ -2,11 +2,14 @@ var React = require('react');
 require("./SimpleBox.scss");
 var cat2 = require("./cat2.png");
 module.exports = React.createClass({
+  getInitialState: function(){
+    return {};
+  },
   render: function() {
     return (
       <div className="simplebox">
-        Hello, world! I am a CommentBox.
-        <img className="simplebox-image" src={ cat2 } />
+        <p>{this.props.title}</p>
+        <img className="simplebox__image" src={ cat2 } />
       </div>
     );
   }
